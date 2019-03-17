@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontology/turismo.owl#"
+     xml:base="http://www.semanticweb.org/ontology/turismo.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontology/turismo.owl">
+        <rdfs:comment>La presente ontología es para describir los lugares turisticos de diferentes sitios.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#dbo:city -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#dbo:city">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#dbo:City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#dbo:country -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#dbo:country">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#dbo:Country"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#dbo:Province"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#dbo:province -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#dbo:province">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#dbo:City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#dbo:Province"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:Geo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:Geo">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:GeoCoordinates"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:areaServed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:areaServed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:ContactPoint"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:owns">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#voc:Bienes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:manage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:manage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:seDedica -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:seDedica">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#voc:Actividad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#foaf:name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#foaf:name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#foaf:weblog -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#foaf:weblog">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:address">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:ContactPoint"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:latitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:GeoCoordinates"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:legalName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:legalName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:longitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:GeoCoordinates"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:telephone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:telephone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:ContactPoint"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#shema:mainEntityOfPage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#shema:mainEntityOfPage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:administracionZonal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:administracionZonal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:cantidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:cantidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#voc:Bienes"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:categoria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:categoria">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#voc:Actividad"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:clasificacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:clasificacion">
+        <rdfs:comment>Se describe a que clase pertence de acuerdo la actividad relizada (Ej. hotel. hostería, restaurat, etc)</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#voc:Actividad"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:referencia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:referencia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:ruc -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:ruc">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:sectorTuristico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:sectorTuristico">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:tipoOrganizacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:tipoOrganizacion">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#LugarTuristico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#dbo:City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#dbo:City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#dbo:Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#dbo:Country">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#dbo:Province -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#dbo:Province">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:ContactPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:ContactPoint"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:GeoCoordinates -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:GeoCoordinates"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#schema:Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#schema:Place"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:Actividad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:Actividad"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontology/turismo.owl#voc:Bienes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/turismo.owl#voc:Bienes"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
